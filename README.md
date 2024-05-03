@@ -1,106 +1,71 @@
-# Data_Cleaning_Python
-
-# Customer Call List Processing
+# Ice Cream Ratings Analysis
 
 ## Overview
 
-This Python script utilizes the pandas library to process a customer call list stored in an Excel file format (.xlsx). The script performs various data cleaning and manipulation tasks to prepare the data for further analysis or use.
+This Python script analyzes ice cream ratings data stored in a CSV file using the pandas library. It explores various visualization techniques to understand and interpret the ratings given to different flavors of ice cream.
 
 ## Requirements
 
 - Python 3.x
 - pandas library
+- numpy library
+- matplotlib library
 
 ## Usage
 
 1. Ensure you have Python installed on your system.
-2. Install the required libraries by running `pip install pandas` in your terminal or command prompt.
-3. Download the 'Customer Call List.xlsx' file and place it in the same directory as the Python script.
+2. Install the required libraries by running `pip install pandas numpy matplotlib` in your terminal or command prompt.
+3. Download the 'Ice Cream Ratings.csv' file and place it in the same directory as the Python script.
+4. Run the script 'ice_cream_ratings_analysis.py'.
 
 ## Description
 
-- **Reading Data:** The script reads the customer call list data from the Excel file using pandas.
-- **Removing Duplicates:** Duplicate rows in the dataset are removed.
-- **Removing Unnecessary Columns:** Certain columns deemed not useful are dropped from the DataFrame.
-- **Cleaning Data:** 
-    - The 'Last_Name' column is stripped of specific characters.
-    - Non-digit characters in the 'Phone_Number' column are removed.
-    - Phone numbers are formatted to follow the XXX-XXX-XXXX pattern.
-    - Any remaining 'NaN' or empty values in the 'Phone_Number' column are handled.
-    - Addresses are split into 'Street Address', 'State', and 'Zip Code' columns.
-    - 'Paying Customer' and 'Do_Not_Contact' columns are standardized ('Yes' -> 'Y', 'No' -> 'N').
-    - 'N/a' values are replaced with empty strings.
-- **Data Filtering:**
-    - Rows with 'Do_Not_Contact' flag set to 'Y' are removed.
-    - Rows with empty phone numbers are removed.
-- **Data Reindexing:** The DataFrame index is reset to ensure sequential index values.
+- **Reading Data:** The script reads the ice cream ratings data from the CSV file using pandas, with the 'Date' column set as the index.
 
-## Use of Code
+![Reading Data](/screenshots/reading_data.png)
 
-- **Reading Data:** The script reads the customer call list data from the Excel file using pandas.
+- **Exploratory Data Analysis and Visualization:**
 
-<img width="557" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/edce457b-d9b3-472f-911c-2570b03a0c13">
+    - **Line Plots:** The script generates line plots to visualize the ice cream ratings over time.
 
-- **Removing Duplicates:** Duplicate rows in the dataset are removed.
+    ![Line Plots](/screenshots/line_plots.png)
 
-<img width="560" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/5d80b3ff-7be4-45dd-b637-4b3f4537e0f9">
+    - **Subplots:** Multiple line plots are created as subplots to compare different aspects of the ratings.
 
-- **Removing Unnecessary Columns:** Certain columns, like 'Not_Useful_Column', are dropped from the DataFrame.
+    ![Subplots](/screenshots/subplots.png)
 
-<img width="557" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/cc5af4c8-031c-49dd-aa00-9325e1e511fe">
+    - **Bar Plots:** Bar plots are used to visualize the ratings of different flavors of ice cream. Stacked and horizontal bar plots are also demonstrated.
 
-- **Cleaning Data:** 
-    - The 'Last_Name' column is stripped of specific characters.
-    - Non-digit characters in the 'Phone_Number' column are removed.
-    - Phone numbers are formatted to follow the XXX-XXX-XXXX pattern.
-    - Any remaining 'NaN' or empty values in the 'Phone_Number' column are handled.
-    - Addresses are split into 'Street Address', 'State', and 'Zip Code' columns.
-    - 'Paying Customer' and 'Do_Not_Contact' columns are standardized ('Yes' -> 'Y', 'No' -> 'N').
-    - 'N/a' values are replaced with empty strings.
- 
-  <img width="555" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/40a00c40-6f44-4dad-92a6-5ddb65a21d63">
-  <img width="554" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/8ab146b4-37c7-4960-ba18-605678bd3b6d">
-  <img width="551" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/b2c78076-0fb0-4a3e-b4b7-9a260a3a162e">
-  <img width="554" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/8ebb19d6-bc72-41f9-8c79-228edcf0db97">
-  <img width="553" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/fbfd6f7f-620e-4238-a003-ecf63b804337">
-  <img width="549" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/1fd42fd6-68eb-4062-a542-80696457c53d">
-  <img width="551" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/1babd077-e4f9-4d24-8ed6-c867210b6a92">
-  <img width="544" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/2f451499-eaa2-4c15-a40f-bef963a51b76">
-  <img width="549" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/a345b3ff-c6d0-4e7d-845d-99cde48c95e0">
-  <img width="547" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/45c68dda-576f-4975-aaa1-0a7541c90fcf">
- 
-  - **Data Filtering:**
-    - Rows with 'Do_Not_Contact' flag set to 'Y' are removed.
-    - Rows with empty phone numbers are removed.
-   
-    <img width="547" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/882c8c52-d72b-423e-862f-beb13bf7c345">
-    <img width="554" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/c5509752-fbe4-438b-9cff-fd3d3aa5c887">
+    ![Bar Plots](/screenshots/bar_plots.png)
 
-- **Data Reindexing:** The DataFrame index is reset to ensure sequential index values.
-<img width="548" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/b243de88-eea0-40e5-8503-cb509982b364">
+    - **Scatter Plot:** A scatter plot is created to visualize the relationship between texture and overall ratings.
 
-   markdown
-Copy code
-## Saving Processed Data
+    ![Scatter Plot](/screenshots/scatter_plot.png)
 
-After processing the customer call list data, you can save the cleaned and filtered DataFrame as a new CSV file using pandas.
+    - **Histogram:** The distribution of ratings is visualized using a histogram.
 
-# Save the processed DataFrame as a new CSV file
-<img width="551" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/29feb7da-57d0-4cc2-a727-dfc7f6c0ac0f">
+    ![Histogram](/screenshots/histogram.png)
 
+    - **Box Plot:** A box plot is generated to show the distribution of ratings and identify any outliers.
 
+    ![Box Plot](/screenshots/box_plot.png)
 
+    - **Area Plot:** An area plot is created to visualize the cumulative sum of ratings over time.
 
+    ![Area Plot](/screenshots/area_plot.png)
 
+    - **Pie Chart:** A pie chart is generated to represent the distribution of ratings for different flavors of ice cream.
 
-
-
-
-
+    ![Pie Chart](/screenshots/pie_chart.png)
 
 ## Output
 
-The processed customer call list DataFrame is ready for further analysis or use.
+The script produces various visualizations to analyze the ice cream ratings data and gain insights into the quality and popularity of different flavors.
 
 ## Author
-Ravi Mhatre
+
+[Your Name]
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
