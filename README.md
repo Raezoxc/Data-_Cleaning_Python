@@ -35,6 +35,12 @@ This Python script utilizes the pandas library to process a customer call list s
     - Rows with empty phone numbers are removed.
 - **Data Reindexing:** The DataFrame index is reset to ensure sequential index values.
 
+## Use of Code
+
+- **Reading Data:** The script reads the customer call list data from the Excel file using pandas.
+
+<img width="557" alt="image" src="https://github.com/Raezoxc/Data_Cleaning_Python/assets/153198226/edce457b-d9b3-472f-911c-2570b03a0c13">
+
 ## Output
 
 The processed customer call list DataFrame is ready for further analysis or use.
